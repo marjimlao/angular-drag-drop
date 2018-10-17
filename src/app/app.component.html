@@ -1,0 +1,21 @@
+<h1>Drag & Drop en Angular 7</h1>
+<div class="container">
+
+  <div class="tienda">
+    <h2>Tienda</h2>
+    <div class="listado" cdkDropList #tiendaList="cdkDropList" [cdkDropListData]="tienda" [cdkDropListConnectedTo]="[carritoList]" (cdkDropListDropped)="drop($event)">
+      <div class="articulo" *ngFor="let articulo of tienda" cdkDrag>
+        <p>{{ articulo.nombre }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="carrito">
+    <h2>Carrito</h2>
+    <div class="listado" cdkDropList #carritoList="cdkDropList" [cdkDropListData]="carrito" [cdkDropListConnectedTo]="[tiendaList]" (cdkDropListDropped)="drop($event)">
+      <div class="articulo" *ngFor="let articulo of carrito" cdkDrag>
+        <p>{{ articulo.nombre }}</p>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" (click)="vaciarCarrito()">Vaciar carrito</button>
+  </div>
+</div>

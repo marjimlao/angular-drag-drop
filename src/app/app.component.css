@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tienda, .carrito {
+    text-align: center;
+    padding: 10px;
+}
+
+.tienda {
+    flex-grow: 2;
+}
+
+.carrito {
+    flex-grow: 1;
+}
+
+.listado {
+    border: 1px solid lightgray;
+    min-height: 50px;
+    margin-bottom: 10px;
+}
+
+.articulo {
+    margin: 5px;
+    border: 1px solid lightgray;
+}
+
+.cdk-drag-preview {
+    text-align: center;
+    background: lightyellow;
+    transition: transform 500ms cubic-bezier(0, 0, 0.2, 1);
+}
+.cdk-drag-animating {
+    transition: transform 550ms cubic-bezier(0, 0, 0.2, 1);
+}
